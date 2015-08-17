@@ -1,0 +1,8 @@
+ signal_kwargs = {}
+        signals.user_logged_out.send(sender=self.request.user.__class__,
+                                    request=self.request,
+                                    user=self.request.user,
+                                    **signal_kwargs)
+                                    
+                                    
+user_logged_out = Signal(providing_args=["request", "user"])
